@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Young+Serif&display=swap"
+        rel="stylesheet"
+        />
+        <link
+        href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css"
+        rel="stylesheet"
+        />
+        <link rel="stylesheet" href="estilos.css" />
+        <title>Carta para una Madre</title>
+    </head>
+
+    <body>          
+        <audio id="myaudio" preload="auto">
+            <source src="audios/Reynaldo Armas-madre.mp3" type="audio/mpeg" >
+            <source src="audios/Reynaldo Armas-madre.ogv" type="audio/ogg" >
+        <!-- <script>
+            window.addEventListener("load", function () {
+                var audio = document.getElementById("myaudio");
+                audio.play();
+            });
+        </script>-->
+        Tu navegador no soporta el elemento de audio.
+        </audio>
+        <h1>¡Feliz dia de las madres!❤️</h1>
+        <p class="psorpresa">Una pequeña sorpresa para la persona mas importante del mundo... Te quiero Mucho</p>
+
+        <div class="contenedor" id="AbrirContenedor">
+        <div class="superior"></div>
+        <div class="mensaje">
+            ¡Feliz Día de la Madres!
+            Hoy celebramos tu amor incondicional, tu fuerza infinita y tu entrega diaria. Gracias por cada abrazo, cada palabra de aliento y cada sacrificio silencioso.
+            Eres el corazón del hogar y el ejemplo que nos guía cada día.
+            
+        </div>
+        <div class="carta">
+            <i class="bx bxs-heart"></i>
+        </div>
+        </div>
+
+        <div class="botones">
+        <button class="boton" id="Abrir">Abrir</button>
+        <button class="boton" id="Cerrar">Cerrar</button>
+        </div>
+        <script>
+            window.addEventListener("load", function () {
+                var audio = document.getElementById("myaudio");
+                // Intentar reproducir el audio cuando la página carga
+                var playPromise = audio.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // La reproducción automática comenzó
+                        console.log("Audio reproduciéndose automáticamente al cargar.");
+                    })
+                    .catch(error => {
+                        // La reproducción automática falló.
+                        // Esto puede ser por política del navegador (requiere interacción del usuario)
+                        // o porque fue interrumpida (AbortError).
+                        if (error.name === 'NotAllowedError') {
+                            console.warn("La autoreproducción fue bloqueada por el navegador. Se requiere interacción del usuario para iniciar el audio.");
+                        } else if (error.name === 'AbortError') {
+                            console.log("La reproducción automática al cargar fue interrumpida (probablemente por una acción de pausa). Esto es normal.");
+                        } else {
+                            console.error("Error al intentar la autoreproducción al cargar:", error);
+                        }
+                    });
+                }
+            });
+        </script>
+        <script src="app.js"></script>
+        <footer>Elaborado por Vincent y Gama7210</footer>
+    </body>
+</html>
