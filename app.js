@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => { // Asegúrate que el DOM e
     const btnAbrir = document.querySelector("#Abrir");
     const btnCerrar = document.querySelector("#Cerrar");
     const miAudioElement = document.getElementById('myaudio');
-    // const botonReproducir = document.getElementById('botonReproducir'); // Este no se usa en tu código actual
-
+    
     // --- Botón para reproducir/reanudar el audio ---
     btnAbrir.addEventListener('click', function() {
         // Solo intentar reproducir si está pausado o no ha comenzado
@@ -13,9 +12,6 @@ document.addEventListener('DOMContentLoaded', () => { // Asegúrate que el DOM e
                 playPromise.then(() => {
                     console.log("Audio reproduciéndose (botón Abrir)");
                 }).catch(error => {
-                    // Si el error es AbortError, es probable que otra acción (como otro clic rápido)
-                    // haya causado una nueva llamada a play/pause.
-                    // No lo mostramos como un error crítico si es AbortError.
                     if (error.name !== 'AbortError') {
                         console.error("Error al intentar reproducir el audio (botón Abrir):", error);
                     } else {
@@ -45,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => { // Asegúrate que el DOM e
         ElementoSuperior.classList.add("abrir-superior");
 
         const h1 = document.querySelector("h1");
-        const p = document.querySelector("p.psorpresa"); // Más específico
+        const p = document.querySelector("p.psorpresa"); 
         h1.style.transform = "translateY(-120px)";
         p.style.transform = "translateY(-120px)";
         h1.style.transition = "transform 0.65s ease-in-out";
@@ -85,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => { // Asegúrate que el DOM e
     const contenedor = document.querySelector("#AbrirContenedor");
     // Abrir carta al hacer click en el contenedor
     contenedor.addEventListener("click", () => {
-        // Aquí podrías considerar también reproducir el audio si está pausado,
-        // para unificar la acción de "abrir"
         if (miAudioElement.paused) {
             const playPromise = miAudioElement.play();
             if (playPromise !== undefined) {
@@ -102,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => { // Asegúrate que el DOM e
         ElementoSuperior.classList.add("abrir-superior");
 
         const h1 = document.querySelector("h1");
-        const p = document.querySelector("p.psorpresa"); // Más específico
+        const p = document.querySelector("p.psorpresa"); 
         h1.style.transform = "translateY(-140px)";
         p.style.transform = "translateY(-140px)";
         h1.style.transition = "transform 0.65s ease-in-out";
